@@ -2,7 +2,7 @@ const { Post } = require("../models/Post");
 const { User, userSchema } = require("../models/User");
 
 exports.getPostForm = (req, res) => {
-  res.render("users/add");
+  res.render("posts/add");
 };
 
 exports.getPosts = (req, res) => {
@@ -16,11 +16,12 @@ exports.getPosts = (req, res) => {
 exports.postNewPost = (req, res) => {
   const post = new Post({
     title: req.body.title,
-    content: req.body.content
+    content: req.body.content,
+    typeOfPost: req.body.typeOfPost
   });
 
   post.save().then(post => {
-    res.redirect("/posts");
+    res.redirect("/posts/all");
   });
 };
 
