@@ -6,7 +6,7 @@ exports.getPostForm = (req, res) => {
 };
 
 exports.getPosts = (req, res) => {
-  User.find({}).then(posts => {
+  Post.find({}).then(posts => {
     res.render("posts/index", {
       posts: posts
     });

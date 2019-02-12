@@ -1,1 +1,20 @@
 <h1>List with all posts</h1>
+{{#each posts}}
+<div class="card text-center">
+    <div class="card-header">
+        type: {{typeOfPost}}
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{title}}</h5>
+        <p class="card-text">{{content}}</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+    <div class="card-footer text-muted">
+        Created on: {{date}}
+    </div>
+</div>
+{{else}}
+<div class="alert alert-secondary" role="alert">
+    No posts yet
+</div>
+{{/each}}
