@@ -6,11 +6,22 @@ exports.getPostForm = (req, res) => {
 };
 
 exports.getPosts = (req, res) => {
-  res.send("listing all posts");
+  User.find({}).then(posts => {
+    res.render("posts/index", {
+      posts: posts
+    });
+  });
 };
 
 exports.postNewPost = (req, res) => {
-  res.send("New post");
+  const post = new Post({
+    title: req.body.title,
+    content: req.body.content
+  });
+
+  post.save().then(post => {
+    res.redirect("/posts");
+  });
 };
 
 exports.getEditForm = (req, res) => {
