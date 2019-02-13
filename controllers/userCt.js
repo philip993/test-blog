@@ -25,7 +25,7 @@ exports.postRegister = (req, res) => {
   });
 
   user.save(user => {
-    res.redirect("/users/me");
+    res.redirect("/users/login");
   });
 };
 
