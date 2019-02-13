@@ -13,9 +13,22 @@ exports.getRegister = (req, res) => {
 };
 
 exports.postRegister = (req, res) => {
-  res.send("register post");
+  const user = new User({
+    username: req.body.username,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    password: req.body.password,
+    age: req.body.age,
+    city: req.body.city,
+    state: req.body.state
+  });
+
+  user.save(user => {
+    res.redirect("/users/me");
+  });
 };
 
 exports.getProfilePage = (req, res) => {
-  res.send("profile");
+  res.render("users/profile");
 };

@@ -1,1 +1,54 @@
 <h1>Register form</h1>
+<form action="/users/register" method="POST">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="username" name='username' value='{{username}}'>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" id="firstName" placeholder="first name" name='firstName' value="{{firstName}}">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" id="lastName" placeholder="last name" name='lastName' value="{{lastName}}">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Email" name='email' value="{{email}}">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password" name='password' value="{{password}}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="age">Age</label>
+        <input type="text" class="form-control" id="age" placeholder="age" name='age' value="{{age}}">
+    </div>
+    <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" class="form-control" id="city" placeholder="City" name='city' value="{{city}}">
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="state">State</label>
+            <input type="text" class="form-control" id="state" name='state' value="{{state}}">
+        </div>
+    </div>
+
+    <!--
+    <div class="form-group col-md-4">
+      <label for="inputState">State</label>
+      <select id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    -->
+    <button type="submit" class="btn btn-primary">Register an account</button>
+</form>
