@@ -5,7 +5,9 @@ exports.getLogin = (req, res) => {
 };
 
 exports.postLogin = (req, res) => {
-  res.send("login post");
+  User.findOne({ email: req.body.email }).then(user => {
+    res.redirect("/users/me");
+  });
 };
 
 exports.getRegister = (req, res) => {

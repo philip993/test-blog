@@ -1,1 +1,11 @@
 <h1>Profile Page</h1>
+{{#if user}}
+<div>{{username}}
+    <p>{{email}}</p>
+    <p>{{firstName}}</p>
+    <p>{{lastName}}</p>
+
+</div>
+{{else}}
+<p>No info</p>
+{{/if}}
