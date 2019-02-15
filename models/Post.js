@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { Comments, commentSchema } = require("./Comments");
 
 const postSchema = new mongoose.Schema({
   title: {
@@ -22,9 +23,9 @@ const postSchema = new mongoose.Schema({
     type: String
     // link with User model
   },
-  comments: {
-    type: String
-    // link with comment model
+  commentsIds: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Comments"
   },
   commentedBy: {
     type: String

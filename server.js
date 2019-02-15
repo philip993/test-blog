@@ -8,6 +8,7 @@ const path = require("path");
 const posts = require("./routes/posts");
 const users = require("./routes/users");
 const rest = require("./routes/rest");
+const comments = require("./routes/comments");
 
 mongoose
   .connect("mongodb://localhost/blog-test", { useNewUrlParser: true })
@@ -25,6 +26,7 @@ app.set("view engine", "handlebars");
 app.use("/posts", posts);
 app.use("/users", users);
 app.use("/", rest);
+app.use("/", comments);
 
 app.use((req, res) => {
   res.render("rest/404");

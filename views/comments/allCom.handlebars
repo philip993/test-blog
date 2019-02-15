@@ -1,1 +1,9 @@
 <h1>All comments</h1>
+
+{{#each comments}}
+<div>
+    {{bodyCom}}
+</div>
+{{else}}
+<p>There aren't any comments yet</p>
+{{/each}}

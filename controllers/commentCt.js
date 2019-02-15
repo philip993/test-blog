@@ -10,10 +10,14 @@ exports.postComment = (req, res) => {
   });
 
   comments.save(comments => {
-    res.redirect("/posts");
+    res.redirect("/comments/all");
   });
 };
 
 exports.getAllComments = (req, res) => {
-  res.render("comments/allCom");
+  Comments.find({ _id: req.params._id }).then(comments => {
+    res.render("comments/allCom", {
+      comments: comments
+    });
+  });
 };
