@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 
 const commentSchema = new mongoose.Schema({
   authorCom: {
-    type: String
-    // ref to User
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User"
   },
   bodyCom: {
     type: String,
@@ -12,10 +12,6 @@ const commentSchema = new mongoose.Schema({
   dateCom: {
     type: Date,
     default: Date.now
-  },
-  postId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Post"
   }
 });
 

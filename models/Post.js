@@ -20,16 +20,8 @@ const postSchema = new mongoose.Schema({
     default: "public"
   },
   author: {
-    type: String
-    // link with User model
-  },
-  commentsIds: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Comments"
-  },
-  commentedBy: {
-    type: String
-    // link with User - username
+    ref: "User"
   },
   date: {
     type: Date,
