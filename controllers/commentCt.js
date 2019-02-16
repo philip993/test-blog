@@ -10,7 +10,7 @@ exports.postComment = (req, res) => {
   });
 
   comments.save(comments => {
-    res.redirect("/comments/all");
+    res.redirect("/posts/comments/all");
   });
 };
 

@@ -9,5 +9,6 @@ router.get("/all", postCtrl.getPosts);
 router.get("/all/:id", postCtrl.getEditForm);
 router.put("/all/:id", postCtrl.putEdit);
 router.delete("/all/:id", postCtrl.deletePost);
+router.get("/comments/:id", postCtrl.getPostCom);
 
 module.exports = router;

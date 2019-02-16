@@ -17,7 +17,8 @@ exports.postNewPost = (req, res) => {
   const post = new Post({
     title: req.body.title,
     content: req.body.content,
-    typeOfPost: req.body.typeOfPost
+    typeOfPost: req.body.typeOfPost,
+    commentsIds: commentsIds._id
   });
 
   post.save().then(post => {
@@ -35,4 +36,15 @@ exports.putEdit = (req, res) => {
 
 exports.deletePost = (req, res) => {
   res.send("deleting");
+};
+
+exports.getPostCom = (req, res) => {
+  Post.find({ _id: req.params._id })
+    .populate("comments", "commentsIds")
+    .exec()
+    .then(posts => {
+      res.render("comments/allCom", {
+        posts: posts
+      });
+    });
 };
